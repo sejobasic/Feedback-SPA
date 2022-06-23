@@ -10,7 +10,7 @@ function RatingSelect() {
   return (
     <ul className='rating'>
       <li>
-        <imput 
+        <input 
           type='radio'
           id='num1'
           value='1'
@@ -20,7 +20,7 @@ function RatingSelect() {
         <label htmlFor='num1'>1</label>
       </li>
       <li>
-        <imput 
+        <input 
           type='radio'
           id='num2'
           value='2'
@@ -30,7 +30,7 @@ function RatingSelect() {
         <label htmlFor='num2'>2</label>
       </li>
       <li>
-        <imput 
+        <input 
           type='radio'
           id='num3'
           value='3'
@@ -40,7 +40,7 @@ function RatingSelect() {
         <label htmlFor='num3'>3</label>
       </li>
       <li>
-        <imput 
+        <input 
           type='radio'
           id='num4'
           value='4'
@@ -50,7 +50,7 @@ function RatingSelect() {
         <label htmlFor='num4'>4</label>
       </li>
       <li>
-        <imput 
+        <input 
           type='radio'
           id='num5'
           value='5'
@@ -60,7 +60,7 @@ function RatingSelect() {
         <label htmlFor='num5'>5</label>
       </li>
       <li>
-        <imput 
+        <input 
           type='radio'
           id='num6'
           value='6'
@@ -70,7 +70,7 @@ function RatingSelect() {
         <label htmlFor='num6'>6</label>
       </li>
       <li>
-        <imput 
+        <input 
           type='radio'
           id='num7'
           value='7'
@@ -80,7 +80,7 @@ function RatingSelect() {
         <label htmlFor='num7'>7</label>
       </li>
       <li>
-        <imput 
+        <input 
           type='radio'
           id='num8'
           value='8'
@@ -90,7 +90,7 @@ function RatingSelect() {
         <label htmlFor='num8'>8</label>
       </li>
       <li>
-        <imput 
+        <input 
           type='radio'
           id='num9'
           value='9'
@@ -100,7 +100,7 @@ function RatingSelect() {
         <label htmlFor='num9'>9</label>
       </li>
       <li>
-        <imput 
+        <input 
           type='radio'
           id='num10'
           value='10'
