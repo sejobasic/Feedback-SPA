@@ -4,7 +4,7 @@ function Header({ text }) {
 
   return (
     <header>
-      <div className='container'>
+      <div className='container header'>
         <h2>{text}</h2>
       </div>
     </header>

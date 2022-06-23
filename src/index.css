@@ -1,7 +1,8 @@
 :root {
-  --primary: #84a98c;
-  --secondary: #354f52;
-  --accent: #cad2c5;
+  --primary: #d4e09b;
+  --secondary: #f19c79;
+  --button: #f6f4d2;
+  --accent: #a44a3f;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wght@500;700&family=Inter:wght@500;700;900&display=swap');
@@ -15,7 +16,7 @@
 body {
   font-family: 'Anek Latin', sans-serif;
   font-weight: 700;
-  background-color: var(--accent);
+  background-color: var(--secondary);
   color: var(--secondary);
   line-height: 1.6;
 }
@@ -37,11 +38,13 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
+  background-color: var(--accent);
+  color: var(--primary);
 }
 
 .card {
-  background-color: var(--accent);
-  color: var(--secondary);
+  background-color: var(--button);
+  color: var(--accent);
   border-radius: 15px;
   padding: 40px 50px;
   margin: 20px 0;
@@ -69,14 +72,14 @@ header {
 .rating li,
 .num-display {
   position: relative;
-  background: #f4f4f4;
+  background: var(--accent);
   width: 50px;
   height: 50px;
   padding: 10px;
   text-align: center;
   border-radius: 50%;
   font-size: 19px;
-  border: 1px #eee solid;
+  border: 1px var(--accent) solid;
   transition: 0.3s;
 }
 
@@ -95,7 +98,7 @@ header {
 .rating li:hover,
 .num-display {
   background: var(--primary);
-  color: #fff;
+  color: var(--accent);
 }
 
 [type='radio'] {
@@ -104,13 +107,13 @@ header {
 
 [type='radio']:checked ~ label {
   background: var(--secondary);
-  color: #fff;
+  color: var(--accent);
 }
 
 .input-group {
   display: flex;
   flex-direction: row;
-  border: 1px solid #ccc;
+  border: 1px solid var(--accent);
   padding: 8px 10px;
   border-radius: 8px;
 }
@@ -126,7 +129,7 @@ input:focus {
 }
 
 .feedback-stats {
-  color: #fff;
+  color: var(--accent);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -163,11 +166,11 @@ input:focus {
 }
 
 .btn-primary {
-  background-color: #202142;
+  background-color: var(--primary);
 }
 
 .btn-secondary {
-  background: #ff6a95;
+  background: var(--primary);
 }
 
 .btn:hover {
@@ -176,8 +179,8 @@ input:focus {
 }
 
 .btn:disabled {
-  background-color: #cccccc;
-  color: #333;
+  background-color: grey;
+  color: var(--accent);
   cursor: auto;
 }
 
