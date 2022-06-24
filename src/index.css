@@ -163,6 +163,11 @@ input:focus {
   border: none;
   transition: all .2s ease-in-out;
 }
+
+.edit:hover {
+  transform: scale(1.2);
+}
+
 .close:hover {
   transform: scale(1.2);
 }
