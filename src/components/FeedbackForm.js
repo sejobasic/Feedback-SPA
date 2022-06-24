@@ -1,16 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import RatingSelect from './RatingSelect'
+import FeedbackContext from '../context/FeedbackContext'
 import Card from './Card'
 import Button from './Button'
 import useSound from 'use-sound';
 import boop2 from '../assets/boop3.wav'
 
-function FeedbackForm({ handleAdd }) {
+function FeedbackForm() {
   const [text, setText] = useState('')
   const [rating, setRating] = useState(10)
   const [btnDisabled, setBtnDisabled] = useState(true)
   const [message, setMessage] = useState('')
+  
   const [addSound] =  useSound(boop2, { volume: 0.1 });
+
+  const {addFeedback} = useContext(FeedbackContext)
 
   // validate input text, minimum 10 chars
   const handleTextChange = (e) => {
@@ -34,11 +38,13 @@ function FeedbackForm({ handleAdd }) {
         text,
         rating
       }
-      handleAdd(newFeedback)
+      addFeedback(newFeedback)
       setText('')
     }
     addSound();
   }
+
+
 
   return (
     <Card>

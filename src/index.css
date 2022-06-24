@@ -64,6 +64,11 @@ header {
   text-align: center;
 }
 
+.no-feedback {
+  color: var(--button);
+  font-weight: 500;
+}
+
 .rating {
   display: flex;
   align-items: center;
