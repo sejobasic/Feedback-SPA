@@ -7,6 +7,7 @@ import FeedbackStats from './components/FeedbackStats'
 import FeedbackForm from './components/FeedbackForm'
 import FeedbackData from './data/FeedbackData'
 import AboutPage from './pages/AboutPage'
+import { FeedbackProvider } from './context/FeedbackContext'
 import AboutLink from './components/AboutLink'
 import useSound from 'use-sound';
 import boop1 from './assets/boop1.wav'
@@ -27,23 +28,25 @@ function App() {
   }
 
   return (
-    <Router>
-      <Header text='Feedback App' />
-      <div className='container'>
-        <Routes>
-          <Route exact path='/' element={
-            <>
-              <FeedbackForm handleAdd={addFeedback} />
-              <FeedbackStats feedback={feedback} />
-              <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
-              <AboutLink />
-            </>
-          }>
-          </Route>
-          <Route path='/about' element={<AboutPage />}/>
-        </Routes>
-      </div>
-    </Router>
+    <FeedbackProvider>
+      <Router>
+        <Header text='Feedback App' />
+        <div className='container'>
+          <Routes>
+            <Route exact path='/' element={
+              <>
+                <FeedbackForm handleAdd={addFeedback} />
+                <FeedbackStats feedback={feedback} />
+                <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
+                <AboutLink />
+              </>
+            }>
+            </Route>
+            <Route path='/about' element={<AboutPage />}/>
+          </Routes>
+        </div>
+      </Router>
+    </FeedbackProvider>
   )
 }
 
