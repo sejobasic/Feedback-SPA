@@ -1,13 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import useSound from 'use-sound';
+import boop2 from '../assets/boop3.wav'
 
 function Button({ children, version, type, isDisabled }) {
+  const [addSound] =  useSound(boop2, { volume: 0.3 });
 
   return (
     <button 
       type={type} 
       disabled={isDisabled} 
       className={`btn btn-${version}`}
+      onClick={addSound}
     >
       {children}
     </button>

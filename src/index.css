@@ -1,8 +1,8 @@
 :root {
-  --primary: #d4e09b;
-  --secondary: #f19c79;
-  --button: #f6f4d2;
-  --accent: #a44a3f;
+  --primary: #f07167;
+  --secondary: #00afb9;
+  --button: #fff;
+  --accent: #0081a7;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wght@500;700&family=Inter:wght@500;700;900&display=swap');
@@ -38,8 +38,8 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
-  background-color: var(--accent);
-  color: var(--primary);
+  background-color: var(--secondary);
+  color: var(--button);
 }
 
 .card {
@@ -72,7 +72,7 @@ header {
 .rating li,
 .num-display {
   position: relative;
-  background: var(--accent);
+  background: var(--button);
   width: 50px;
   height: 50px;
   padding: 10px;
@@ -92,7 +92,12 @@ header {
   padding: 10px;
   border-radius: 50%;
   transform: translate(-50%, -50%);
+  transition: all .2s ease-in-out;
   cursor: pointer;
+}
+
+.rating li:hover {
+  transform: scale(1.1);
 }
 
 .rating li:hover,
@@ -106,7 +111,7 @@ header {
 }
 
 [type='radio']:checked ~ label {
-  background: var(--secondary);
+  background: var(--primary);
   color: var(--accent);
 }
 
@@ -129,7 +134,7 @@ input:focus {
 }
 
 .feedback-stats {
-  color: var(--accent);
+  color: var(--button);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -149,6 +154,10 @@ input:focus {
   cursor: pointer;
   background: none;
   border: none;
+  transition: all .2s ease-in-out;
+}
+.close:hover {
+  transform: scale(1.2);
 }
 
 .edit {
@@ -179,8 +188,8 @@ input:focus {
 }
 
 .btn:disabled {
-  background-color: grey;
-  color: var(--accent);
+  background-color: rgb(157, 157, 157);
+  color: var(--button);
   cursor: auto;
 }
 
@@ -192,7 +201,7 @@ input:focus {
 .message {
   padding-top: 10px;
   text-align: center;
-  color: rebeccapurple;
+  color: var(--primary);
 }
 
 /* FIX: Remove position: absolute to keep about icon at the bottom of the
