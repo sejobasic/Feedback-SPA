@@ -1,19 +1,9 @@
 {
   "feedback": [
     {
-      "id": 1,
+      "text": "Service was great!!",
       "rating": 10,
-      "text": "This is feedback item 1"
-    },
-    {
-      "id": 2,
-      "rating": 5,
-      "text": "This is feedback item 2"
-    },
-    {
-      "id": 3,
-      "rating": 7,
-      "text": "This is feedback item 3"
+      "id": 1
     }
   ]
 }

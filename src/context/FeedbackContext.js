@@ -1,5 +1,4 @@
 import React, { useState, createContext, useEffect } from 'react'
-import { v4 as uuidv4 } from 'uuid'
 import useSound from 'use-sound';
 import boop1 from '../assets/boop1.wav'
 
@@ -21,7 +20,7 @@ export const FeedbackProvider = ({ children }) => {
 
   // Fetch feedback data
   const fetchFeedback = async () => {
-    const resp = await fetch('http://localhost:5000/feedback?_sort=id&_order=desc')
+    const resp = await fetch('/feedback?_sort=id&_order=desc')
     const data = await resp.json()
 
     setFeedback(data)
@@ -29,21 +28,43 @@ export const FeedbackProvider = ({ children }) => {
   }
 
   // Add new feedback
-  const addFeedback = (newFeedback) => {
-    newFeedback.id = uuidv4()
-    setFeedback([newFeedback, ...feedback])
+  const addFeedback = async (newFeedback) => {
+    const resp = await fetch('/feedback', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newFeedback),
+    })
+
+    const data = await resp.json()
+
+    setFeedback([data, ...feedback])
   }
 
   // Delete feedback
-  const deleteFeedback = (id) => {
+  const deleteFeedback = async (id) => {
+    await fetch(`/feedback/${id}`, {
+      method: 'DELETE'
+    })
+
     deleteSound(feedback)
     setFeedback(feedback.filter((item) => item.id !== id))
   }
 
   // Update feedback item
-  const updateFeedback = (id, updItem) => {
+  const updateFeedback = async (id, updItem) => {
+    const resp = await fetch(`/feedback/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updItem)
+    })
+    const data = await resp.json()
+
     setFeedback(feedback.map((item) => 
-    item.id === id ? {...item, ...updItem} : item))
+    item.id === id ? {...item, ...data} : item))
   }
 
   // Set item to be updated
