@@ -4,6 +4,21 @@
       "text": "Service was great!!",
       "rating": 10,
       "id": 1
+    },
+    {
+      "text": "Service was just okay",
+      "rating": 4,
+      "id": 2
+    },
+    {
+      "text": "Incredible Service!!",
+      "rating": 10,
+      "id": 3
+    },
+    {
+      "text": "Very long wait",
+      "rating": 2,
+      "id": 4
     }
   ]
 }
